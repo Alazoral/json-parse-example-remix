@@ -3,7 +3,7 @@ import fs from 'fs/promises'
 import {join} from "path";
 
 export const loader = async () => {
-    const filename = join(process.cwd(), 'data', 'crash.json')
+    const filename = join(__dirname, 'data', 'crash.json')
     console.log('Opening filename', filename)
     const loadedText = await fs.readFile(filename, 'utf8')
     const requestJson = JSON.parse(loadedText)
